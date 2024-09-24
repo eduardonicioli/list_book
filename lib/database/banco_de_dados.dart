@@ -19,7 +19,7 @@ class BancoDeDados {
     String caminho = join(await getDatabasesPath(), 'livros.db');
     return await openDatabase(caminho, version: 1, onCreate: (db, version) {
       return db.execute(
-        'CREATE TABLE livros(id TEXT PRIMARY KEY, titulo TEXT, autores TEXT, descricao TEXT, capa TEXT)',
+        'CREATE TABLE livros(id TEXT PRIMARY KEY, titulo TEXT, autores TEXT, capa TEXT)',
       );
     });
   }
@@ -37,7 +37,7 @@ class BancoDeDados {
         id: maps[i]['id'],
         titulo: maps[i]['titulo'],
         autores: maps[i]['autores'],
-        descricao: maps[i]['descricao'],
+        //descricao: maps[i]['descricao'],
         capa: maps[i]['capa'],
       );
     });

@@ -13,11 +13,14 @@ class _PesquisaLivrosPaginaState extends State<PesquisaLivrosPagina> {
   String _consulta = '';
 
   Future<void> _buscarLivros() async {
-    final livros = await _livroRepositorio.buscarLivros(_consulta);
-    setState(() {
-      _livros = livros;
-    });
+    if (_consulta.isNotEmpty) {
+      final livros = await _livroRepositorio.buscarLivros(_consulta);
+      setState(() {
+        _livros = livros;
+      });
+    }
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -47,10 +50,14 @@ class _PesquisaLivrosPaginaState extends State<PesquisaLivrosPagina> {
                 return ListTile(
                   title: Text(livro.titulo),
                   subtitle: Text(livro.autores),
+                  leading: livro.capa.isNotEmpty
+                      ? Image.network(livro.capa)
+                      : null,
                 );
               },
             ),
           ),
+
         ],
       ),
     );

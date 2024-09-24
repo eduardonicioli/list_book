@@ -1,5 +1,5 @@
-import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:http/http.dart' as http;
 import '../models/livro_modelo.dart';
 
 class Repositorio {
@@ -7,11 +7,10 @@ class Repositorio {
     final response = await http.get(Uri.parse('https://www.googleapis.com/books/v1/volumes?q=$consulta'));
 
     if (response.statusCode == 200) {
-      final data = json.decode(response.body);
-      final List<Livro> livros = (data['items'] as List)
-          .map((item) => Livro.fromJson(item['volumeInfo']))
-          .toList();
-      return livros;
+      final Map<String, dynamic> data = json.decode(response.body);
+      final List<dynamic> items = data['items'] ?? [];
+
+      return items.map((item) => Livro.fromJson(item)).toList();
     } else {
       throw Exception('Falha ao carregar livros');
     }
