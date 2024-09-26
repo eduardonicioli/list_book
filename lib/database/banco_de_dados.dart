@@ -37,7 +37,6 @@ class BancoDeDados {
         id: maps[i]['id'],
         titulo: maps[i]['titulo'],
         autores: maps[i]['autores'],
-        //descricao: maps[i]['descricao'],
         capa: maps[i]['capa'],
       );
     });

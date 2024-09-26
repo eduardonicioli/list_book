@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../repositories/repositorio.dart';
 import '../models/livro_modelo.dart';
+import '../database/banco_de_dados.dart';
 
 class PesquisaLivrosPagina extends StatefulWidget {
   @override
@@ -8,7 +9,7 @@ class PesquisaLivrosPagina extends StatefulWidget {
 }
 
 class _PesquisaLivrosPaginaState extends State<PesquisaLivrosPagina> {
-  final Repositorio _livroRepositorio = Repositorio(); // Defina aqui a instância
+  final Repositorio _livroRepositorio = Repositorio();
   List<Livro> _livros = [];
   String _consulta = '';
 
@@ -21,12 +22,18 @@ class _PesquisaLivrosPaginaState extends State<PesquisaLivrosPagina> {
     }
   }
 
+  Future<void> _adicionarLivro(Livro livro) async {
+    await BancoDeDados().inserirLivro(livro);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Livro "${livro.titulo}" adicionado à lista de leitura')),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pesquisa de Livros'),
+        title: const Text('Pesquisa de Livros'),
       ),
       body: Column(
         children: [
@@ -34,13 +41,13 @@ class _PesquisaLivrosPaginaState extends State<PesquisaLivrosPagina> {
             onChanged: (value) {
               _consulta = value;
             },
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: 'Digite o título do livro',
             ),
           ),
           ElevatedButton(
             onPressed: _buscarLivros,
-            child: Text('Buscar'),
+            child: const Text('Buscar'),
           ),
           Expanded(
             child: ListView.builder(
@@ -53,11 +60,16 @@ class _PesquisaLivrosPaginaState extends State<PesquisaLivrosPagina> {
                   leading: livro.capa.isNotEmpty
                       ? Image.network(livro.capa)
                       : null,
+                  trailing: IconButton(
+                    icon: const Icon(Icons.add),
+                    onPressed: () {
+                      _adicionarLivro(livro);
+                    },
+                  ),
                 );
               },
             ),
           ),
-
         ],
       ),
     );

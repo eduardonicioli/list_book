@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'pages/pesquisa_livros_pagina.dart';
 import 'pages/lista_leitura_pagina.dart';
+import 'pages/pesquisa_livros_pagina.dart';
+import 'pages/tela_inicial.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => PesquisaLivrosPagina(),
+        '/': (context) => const TelaInicial(),
+        '/pesquisaLivros': (context) => PesquisaLivrosPagina(),
         '/listaLeitura': (context) => const ListaLeituraPagina(),
       },
     );
