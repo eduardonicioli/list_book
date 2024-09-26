@@ -7,26 +7,57 @@ class TelaInicial extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Biblioteca'),
+        backgroundColor: const Color(0xFF0D47A1),
+        title: const Text('Page Turners', style: TextStyle(
+          fontFamily: 'Roboto',
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),),
+        centerTitle: true,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/pesquisaLivros');
-              },
-              child: const Text('Pesquisar Livros'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/listaLeitura');
-              },
-              child: const Text('Minha Lista de Leitura'),
-            ),
-          ],
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xFF0D47A1), // Azul escuro
+              Color(0xFF42A5F5), // Azul claro
+            ],
+          ),
         ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const SizedBox(height: 400),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/pesquisaLivros');
+                },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(200, 60),
+                  padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 32),
+                  textStyle: const TextStyle(fontSize: 18),
+                ),
+                child: const Text('Pesquisar Livros'),
+              ),
+              const SizedBox(height: 40),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/listaLeitura');
+                },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(200, 60), // Largura e altura dos botões
+                  padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 32),
+                  textStyle: const TextStyle(fontSize: 18), // Tamanho da fonte
+                ),
+                child: const Text('Minha Lista de Leitura'),
+              ),
+            ],
+          ),
+        )
       ),
     );
   }
