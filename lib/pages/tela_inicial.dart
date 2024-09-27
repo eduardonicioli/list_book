@@ -7,14 +7,13 @@ class TelaInicial extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFF0D47A1),
-        title: const Text('Page Turners', style: TextStyle(
-          fontFamily: 'Roboto',
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-        ),),
+        title: Image.asset(
+          'assets/imagens/logo.png',
+          fit: BoxFit.contain,
+          height: 50,
+        ),
         centerTitle: true,
+        backgroundColor: Colors.white,
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -22,14 +21,13 @@ class TelaInicial extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xFF0D47A1), // Azul escuro
-              Color(0xFF42A5F5), // Azul claro
+              Color(0xFF0D47A1),
+              Color(0xFF42A5F5),
             ],
           ),
         ),
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const SizedBox(height: 400),
               ElevatedButton(
