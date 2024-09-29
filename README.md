@@ -19,7 +19,11 @@
 <h2>Integrantes</h2>
 <ul>
     <li><strong>Carlos Eduardo</strong></li>
-    <li><strong>Rafel Henrique</strong></li><br><br>
+    <li><strong>Rafel Henrique</strong></li>
+</ul>
+
+<h2>Professor</h2>
+<ul>   
     <li><strong>Professor:</strong> Douglas</li>
 </ul>
 
