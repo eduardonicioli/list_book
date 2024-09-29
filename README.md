@@ -20,22 +20,12 @@
 <table>
     <tr>
         <th>Nome</th>
-        <th>Função</th>
     </tr>
     <tr>
-        <td>Nome 1</td>
-        <td>Desenvolvimento</td>
+        <td>Carlos Eduardo Nicioli</td>
     </tr>
     <tr>
-        <td>Nome 2</td>
-        <td>UI/UX Design</td>
+        <td>Rafael Henrique de Oliveira</td>
     </tr>
     <tr>
-        <td>Nome 3</td>
-        <td>Backend/API</td>
-    </tr>
-    <tr>
-        <td>Nome 4</td>
-        <td>Gerenciamento de Projeto</td>
-    </tr>
 </table>
