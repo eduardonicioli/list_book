@@ -10,7 +10,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Aplicativo de Livros',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const TelaInicial(),
         '/pesquisaLivros': (context) => PesquisaLivrosPagina(),
-        '/listaLeitura': (context) => const ListaLeituraPagina(),
+        '/listaLeitura': (context) => ListaLeituraPagina(),
       },
     );
   }

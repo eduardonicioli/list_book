@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'my_app.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
-import 'package:flutter/foundation.dart' show defaultTargetPlatform, TargetPlatform;
+import 'package:flutter/foundation.dart'
+    show defaultTargetPlatform, TargetPlatform;
 
 void main() {
   // Verifica se a plataforma é desktop (Windows, macOS ou Linux)

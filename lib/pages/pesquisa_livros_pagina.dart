@@ -25,7 +25,9 @@ class _PesquisaLivrosPaginaState extends State<PesquisaLivrosPagina> {
   Future<void> _adicionarLivro(Livro livro) async {
     await BancoDeDados().inserirLivro(livro);
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Livro "${livro.titulo}" adicionado à lista de leitura')),
+      SnackBar(
+          content:
+              Text('Livro "${livro.titulo}" adicionado à lista de leitura')),
     );
   }
 
@@ -40,7 +42,7 @@ class _PesquisaLivrosPaginaState extends State<PesquisaLivrosPagina> {
         ),
         centerTitle: true,
         backgroundColor: Colors.white,
-        elevation: 0, // Remove a sombra da AppBar
+        elevation: 0,
       ),
       body: Container(
         color: Colors.white, // Fundo branco
@@ -60,7 +62,7 @@ class _PesquisaLivrosPaginaState extends State<PesquisaLivrosPagina> {
             ElevatedButton(
               onPressed: _buscarLivros,
               style: ElevatedButton.styleFrom(
-                minimumSize: const Size(200, 60), // Mesmo estilo do botão na tela inicial
+                minimumSize: const Size(200, 60),
                 textStyle: const TextStyle(fontSize: 18),
               ),
               child: const Text('Buscar'),
@@ -69,48 +71,48 @@ class _PesquisaLivrosPaginaState extends State<PesquisaLivrosPagina> {
             Expanded(
               child: _livros.isEmpty
                   ? const Center(
-                child: Text(
-                  'Nenhum livro encontrado.',
-                  style: TextStyle(fontSize: 18),
-                ),
-              )
+                      child: Text(
+                        'Nenhum livro encontrado.',
+                        style: TextStyle(fontSize: 18),
+                      ),
+                    )
                   : ListView.builder(
-                itemCount: _livros.length,
-                itemBuilder: (context, index) {
-                  final livro = _livros[index];
-                  return Card(
-                    margin: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: ExpansionTile(
-                      leading: livro.capa.isNotEmpty
-                          ? Image.network(
-                        livro.capa,
-                        width: 50,
-                        fit: BoxFit.cover,
-                      )
-                          : null,
-                      title: Text(livro.titulo),
-                      subtitle: Text(livro.autores),
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(livro.descricao), // Exibe a descrição quando expandido
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            IconButton(
-                              icon: const Icon(Icons.add),
-                              onPressed: () {
-                                _adicionarLivro(livro);
-                              },
-                            ),
-                          ],
-                        ),
-                      ],
+                      itemCount: _livros.length,
+                      itemBuilder: (context, index) {
+                        final livro = _livros[index];
+                        return Card(
+                          margin: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: ExpansionTile(
+                            leading: livro.capa.isNotEmpty
+                                ? Image.network(
+                                    livro.capa,
+                                    width: 50,
+                                    fit: BoxFit.cover,
+                                  )
+                                : null,
+                            title: Text(livro.titulo),
+                            subtitle: Text(livro.autores),
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(livro.descricao),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  IconButton(
+                                    icon: const Icon(Icons.add),
+                                    onPressed: () {
+                                      _adicionarLivro(livro);
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        );
+                      },
                     ),
-                  );
-                },
-              ),
             ),
           ],
         ),

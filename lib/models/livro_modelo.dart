@@ -3,14 +3,14 @@ class Livro {
   final String titulo;
   final String autores;
   final String capa;
-  final String descricao;  // Adicionando a descrição
+  final String descricao;
 
   Livro({
     required this.id,
     required this.titulo,
     required this.autores,
     required this.capa,
-    required this.descricao,  // Incluir a descrição no construtor
+    required this.descricao,
   });
 
   // Atualizando o factory constructor para incluir a descrição
@@ -22,7 +22,8 @@ class Livro {
       titulo: volumeInfo['title'] ?? 'Sem Título',
       autores: (volumeInfo['authors'] as List<dynamic>? ?? []).join(', '),
       capa: volumeInfo['imageLinks']?['thumbnail'] ?? '',
-      descricao: volumeInfo['description'] ?? 'Descrição não disponível', // Extrair descrição
+      descricao: volumeInfo['description'] ??
+          'Descrição não disponível',
     );
   }
 
@@ -33,7 +34,7 @@ class Livro {
       'titulo': titulo,
       'autores': autores,
       'capa': capa,
-      'descricao': descricao,  // Inclui a descrição no mapeamento
+      'descricao': descricao, // Inclui a descrição no mapeamento
     };
   }
 }

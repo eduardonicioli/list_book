@@ -4,7 +4,9 @@ import '../models/livro_modelo.dart';
 
 class BancoDeDados {
   static final BancoDeDados _instance = BancoDeDados._internal();
+
   factory BancoDeDados() => _instance;
+
   BancoDeDados._internal();
 
   static Database? _database;
@@ -30,7 +32,8 @@ class BancoDeDados {
 
   Future<void> inserirLivro(Livro livro) async {
     final db = await database;
-    await db.insert('livros', livro.toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
+    await db.insert('livros', livro.toMap(),
+        conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
   Future<List<Livro>> buscarLivros() async {

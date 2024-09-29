@@ -29,7 +29,14 @@ class TelaInicial extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              const SizedBox(height: 400),
+              const SizedBox(height: 100),
+              Image.asset(
+                'assets/imagens/book.jpeg',
+                height: 300,
+                width: 300,
+                fit: BoxFit.contain,
+              ),
+              const SizedBox(height: 100),
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/pesquisaLivros');
