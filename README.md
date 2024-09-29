@@ -5,50 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentação - Aplicativo Lista de Livros</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f7f7f7;
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        ul li {
-            margin-bottom: 10px;
-        }
-        ul li::before {
-            content: "✔️";
-            margin-right: 8px;
-            color: #4CAF50;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table, th, td {
-            border: 1px solid #ccc;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        pre {
-            background-color: #eee;
-            padding: 10px;
-            border-radius: 5px;
-            white-space: pre-wrap;
-        }
-    </style>
 </head>
 <body>
 
