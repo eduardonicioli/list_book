@@ -17,11 +17,15 @@ class BancoDeDados {
 
   Future<Database> _iniciarBancoDeDados() async {
     String caminho = join(await getDatabasesPath(), 'livros.db');
-    return await openDatabase(caminho, version: 1, onCreate: (db, version) {
-      return db.execute(
-        'CREATE TABLE livros(id TEXT PRIMARY KEY, titulo TEXT, autores TEXT, capa TEXT)',
-      );
-    });
+    return await openDatabase(
+      caminho,
+      version: 1,
+      onCreate: (db, version) {
+        return db.execute(
+          'CREATE TABLE livros(id TEXT PRIMARY KEY, titulo TEXT, autores TEXT, capa TEXT, descricao TEXT)',
+        );
+      },
+    );
   }
 
   Future<void> inserirLivro(Livro livro) async {
@@ -38,6 +42,7 @@ class BancoDeDados {
         titulo: maps[i]['titulo'],
         autores: maps[i]['autores'],
         capa: maps[i]['capa'],
+        descricao: maps[i]['descricao'] ?? 'Sem descrição disponível',
       );
     });
   }

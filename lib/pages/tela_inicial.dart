@@ -47,9 +47,9 @@ class TelaInicial extends StatelessWidget {
                   Navigator.pushNamed(context, '/listaLeitura');
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(200, 60), // Largura e altura dos botões
+                  minimumSize: const Size(200, 60),
                   padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 32),
-                  textStyle: const TextStyle(fontSize: 18), // Tamanho da fonte
+                  textStyle: const TextStyle(fontSize: 18),
                 ),
                 child: const Text('Minha Lista de Leitura'),
               ),
