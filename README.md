@@ -17,15 +17,20 @@
 </ul>
 
 <h2>Integrantes</h2>
-<table>
-    <tr>
-        <th>Nome</th>
-    </tr>
-    <tr>
-        <td>Carlos Eduardo Nicioli</td>
-    </tr>
-    <tr>
-        <td>Rafael Henrique de Oliveira</td>
-    </tr>
-    <tr>
-</table>
+<ul>
+    <li><strong>Carlos Eduardo</strong></li>
+    <li><strong>Rafel Henrique</strong></li>
+    <li><strong>Professor:</strong> Douglas</li>
+</ul>
+
+<h2>Curso</h2>
+<p>5° semestre de Desenvolvimento de Software Multiplataforma - FATEC Itapira</p>
+<p><strong>Matéria:</strong> Laboratório de Desenvolvimento para Dispositivos Móveis</p>
+
+<h2>Requisitos</h2>
+<ul>
+    <li>Conexão com uma API para consulta de livros</li>
+    <li>Interface amigável para pesquisa e exibição de detalhes dos livros</li>
+    <li>Armazenamento local utilizando SQLite para manter a lista de leitura offline</li>
+</ul>
+
