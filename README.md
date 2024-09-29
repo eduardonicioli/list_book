@@ -1,13 +1,3 @@
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentação - Aplicativo Lista de Livros</title>
-</head>
-<body>
-
     <h1>📚 Aplicativo Lista de Livros</h1>
 
     <h2>Funcionalidades</h2>
