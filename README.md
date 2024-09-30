@@ -24,7 +24,7 @@
 
 <h2>Professor</h2>
 <ul>   
-    <li><strong>Professor:</strong> Douglas</li>
+    <li><strong>Douglas</strong> </li>
 </ul>
 
 <h2>Curso</h2>
