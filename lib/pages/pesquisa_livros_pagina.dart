@@ -41,11 +41,10 @@ class _PesquisaLivrosPaginaState extends State<PesquisaLivrosPagina> {
           height: 50,
         ),
         centerTitle: true,
-        backgroundColor: Colors.white,
-        elevation: 0,
+        backgroundColor: const Color(0xFF0D47A1),
       ),
       body: Container(
-        color: Colors.white, // Fundo branco
+        color: Colors.white,
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [

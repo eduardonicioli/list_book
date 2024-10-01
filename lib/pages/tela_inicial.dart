@@ -13,7 +13,7 @@ class TelaInicial extends StatelessWidget {
           height: 50,
         ),
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0xFF0D47A1),
       ),
       body: Container(
         decoration: const BoxDecoration(

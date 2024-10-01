@@ -34,7 +34,7 @@ class _ListaLeituraPaginaState extends State<ListaLeituraPagina> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0xFF0D47A1),
         elevation: 0,
         centerTitle: true,
         title: Row(
@@ -42,7 +42,7 @@ class _ListaLeituraPaginaState extends State<ListaLeituraPagina> {
           children: [
             const Text(
               'Minha lista de leitura',
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: Colors.white),
             ),
           ],
         ), // Remove a sombra da AppBar
