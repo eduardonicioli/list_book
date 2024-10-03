@@ -31,11 +31,11 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # Pacote para fazer requisições HTTP
-  http: ^1.2.2
-
   # Pacote para manipulação do SQLite
   sqflite: ^2.0.0+4
+
+  # Pacote para fazer requisições HTTP
+  http: ^1.2.2
 
   # Pacote para manipular caminhos do sistema de arquivos
   path: ^1.8.0
